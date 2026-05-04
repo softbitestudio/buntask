@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- ears -->
+  <ellipse cx="11" cy="8" rx="3" ry="6" fill="#fef3c7"/>
+  <ellipse cx="21" cy="8" rx="3" ry="6" fill="#fef3c7"/>
+  <ellipse cx="11" cy="8" rx="1.5" ry="4" fill="#fda4af"/>
+  <ellipse cx="21" cy="8" rx="1.5" ry="4" fill="#fda4af"/>
+  <!-- body -->
+  <ellipse cx="16" cy="22" rx="8" ry="7" fill="#fef3c7"/>
+  <!-- head -->
+  <circle cx="16" cy="15" r="6" fill="#fef3c7"/>
+  <!-- eyes -->
+  <circle cx="14" cy="14" r="1" fill="#1c1917"/>
+  <circle cx="18" cy="14" r="1" fill="#1c1917"/>
+  <!-- nose -->
+  <ellipse cx="16" cy="16" rx="1" ry="0.6" fill="#fb7185"/>
+  <!-- tail -->
+  <circle cx="24" cy="24" r="2.5" fill="white"/>
+</svg>
