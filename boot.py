@@ -31,10 +31,10 @@ LCD_RST  = board.IO39
 LCD_BL   = board.IO48
 
 # AXS5106L capacitive touch (I2C @ 0x15)
-TP_SDA = board.IO11
-TP_SCL = board.IO10
-TP_RST = board.IO38
-# TP_INT = board.IO4   # optional, not used by code.py
+TP_SDA = board.IO42
+TP_SCL = board.IO41
+TP_RST = board.IO47
+# TP_INT = board.IO48  # optional, not used by code.py
 
 # ---------------------------------------------------------------------------
 # Expose touch pins on the board module so code.py can do `board.TP_SCL` etc.
