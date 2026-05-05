@@ -29,15 +29,21 @@ export default function App() {
       setTasks(prev => prev.map(t => t.id === id ? { ...t, state: 'dancing' } : t))
     }, 600)
 
+    // after dancing, enter interactive reward state instead of immediately roaming
     setTimeout(() => {
-      setTasks(prev => prev.map(t => t.id === id ? { ...t, state: 'roaming' } : t))
+      setTasks(prev => prev.map(t => t.id === id ? { ...t, state: 'interactive' } : t))
     }, 1800)
   }, [tasks])
 
-  const pendingCount   = tasks.filter(t => t.state === 'trapped').length
-  const visibleTasks   = tasks.filter(t => t.state !== 'roaming')
-  const roamingTasks   = tasks.filter(t => t.state === 'roaming')
-  const completedCount = roamingTasks.length
+  const releaseToMeadow = useCallback((id: string) => {
+    setTasks(prev => prev.map(t => t.id === id ? { ...t, state: 'roaming' } : t))
+  }, [])
+
+  const pendingCount      = tasks.filter(t => t.state === 'trapped').length
+  const visibleTasks      = tasks.filter(t => t.state !== 'roaming' && t.state !== 'interactive')
+  const interactiveTasks  = tasks.filter(t => t.state === 'interactive')
+  const roamingTasks      = tasks.filter(t => t.state === 'roaming')
+  const completedCount    = roamingTasks.length
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -89,7 +95,11 @@ export default function App() {
       </main>
 
       {/* meadow — always visible at the bottom */}
-      <Meadow roamingTasks={roamingTasks} />
+      <Meadow
+        roamingTasks={roamingTasks}
+        interactiveTasks={interactiveTasks}
+        onRelease={releaseToMeadow}
+      />
     </div>
   )
 }

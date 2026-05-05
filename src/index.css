@@ -142,3 +142,104 @@ body {
 .dancing-star:nth-child(1) { top: -8px;  left: 0px;  animation-delay: 0s; }
 .dancing-star:nth-child(2) { top: -8px;  right: 0px; animation-delay: 0.25s; }
 .dancing-star:nth-child(3) { top: 30px;  left: -10px; animation-delay: 0.5s; }
+
+/* ══════════════════════════════════════════
+   INTERACTIVE — reward loop
+══════════════════════════════════════════ */
+
+/* Bunny breathes gently, waiting */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+.bunny-interactive .bunny-svg {
+  animation: breathe 2s ease-in-out infinite;
+  display: block;
+}
+
+/* Bounce-in when entering interactive state */
+@keyframes bounce-in {
+  0%   { transform: translateY(-80px) scale(0.6); opacity: 0; }
+  60%  { transform: translateY(8px) scale(1.08); opacity: 1; }
+  80%  { transform: translateY(-4px) scale(0.97); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.bunny-interactive-wrap {
+  animation: bounce-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Squish on pet */
+@keyframes squish {
+  0%   { transform: scale(1, 1); }
+  20%  { transform: scale(1.18, 0.82); }
+  50%  { transform: scale(0.94, 1.12); }
+  75%  { transform: scale(1.06, 0.96); }
+  100% { transform: scale(1, 1); }
+}
+
+.bunny-squish {
+  animation: squish 0.45s ease-in-out;
+}
+
+/* Nibble on feed */
+@keyframes nibble {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  20%       { transform: rotate(-10deg) translateX(-3px); }
+  40%       { transform: rotate(8deg) translateX(3px); }
+  60%       { transform: rotate(-6deg) translateX(-2px); }
+  80%       { transform: rotate(4deg) translateX(1px); }
+}
+
+.bunny-nibble {
+  animation: nibble 0.5s ease-in-out;
+}
+
+/* Heart floats up and fades */
+@keyframes heart-float {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  60%  { opacity: 1; transform: translateY(-32px) scale(1.4); }
+  100% { opacity: 0; transform: translateY(-56px) scale(0.9); }
+}
+
+.heart-float {
+  animation: heart-float 0.9s ease-out forwards;
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.4rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Strawberry flies toward mouth */
+@keyframes berry-fly {
+  0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(12px, -18px) scale(0.2); }
+}
+
+.berry-fly {
+  animation: berry-fly 0.55s ease-in forwards;
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.2rem;
+}
+
+/* Timer progress bar drain */
+@keyframes timer-drain {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+/* Release — bunny waves goodbye before roaming */
+@keyframes wave-off {
+  0%   { transform: translateX(0) rotate(0deg); opacity: 1; }
+  30%  { transform: translateX(10px) rotate(5deg); }
+  60%  { transform: translateX(20px) rotate(-3deg); }
+  100% { transform: translateX(60px) rotate(8deg); opacity: 0; }
+}
+
+.bunny-waving-off {
+  animation: wave-off 0.6s ease-in forwards;
+}

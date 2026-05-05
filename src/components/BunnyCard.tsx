@@ -3,15 +3,17 @@ import { BunnyTrapped } from '../assets/bunnies/BunnyTrapped'
 import { BunnyBreaking } from '../assets/bunnies/BunnyBreaking'
 import { BunnyDancing } from '../assets/bunnies/BunnyDancing'
 import { BunnyRoaming } from '../assets/bunnies/BunnyRoaming'
+import { BunnyInteractive } from '../assets/bunnies/BunnyInteractive'
 import type { ComponentType } from 'react'
 
 interface BunnySVGProps { className?: string }
 
 const BUNNY_MAP: Record<BunnyState, ComponentType<BunnySVGProps>> = {
-  trapped:  BunnyTrapped,
-  breaking: BunnyBreaking,
-  dancing:  BunnyDancing,
-  roaming:  BunnyRoaming,
+  trapped:     BunnyTrapped,
+  breaking:    BunnyBreaking,
+  dancing:     BunnyDancing,
+  interactive: BunnyInteractive,
+  roaming:     BunnyRoaming,
 }
 
 interface Props {
@@ -23,8 +25,9 @@ interface Props {
 const STATE_BG: Record<BunnyState, string> = {
   trapped:  'bg-rose-50   border-rose-200',
   breaking: 'bg-amber-50  border-amber-300',
-  dancing:  'bg-green-50  border-green-300',
-  roaming:  'bg-white     border-gray-200',
+  dancing:     'bg-green-50  border-green-300',
+  interactive: 'bg-yellow-50 border-yellow-300',
+  roaming:     'bg-white     border-gray-200',
 }
 
 export function BunnyCard({ task, onComplete, canComplete }: Props) {

@@ -1,4 +1,4 @@
-export type BunnyState = 'trapped' | 'breaking' | 'dancing' | 'roaming';
+export type BunnyState = 'trapped' | 'breaking' | 'dancing' | 'interactive' | 'roaming';
 
 export interface Task {
   id: string;
