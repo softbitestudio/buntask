@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { Task } from '../types'
-import { BunnyInteractive } from '../assets/bunnies/BunnyInteractive'
+import { BunnyInteractive } from '../assets/bunnies/BunnyPlaceholder'
 
 const REWARD_SECONDS = 30
 const MAX_PETS = 4

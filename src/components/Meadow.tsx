@@ -1,5 +1,5 @@
 import type { Task } from '../types'
-import { BunnyRoaming } from '../assets/bunnies/BunnyRoaming'
+import { BunnyRoaming } from '../assets/bunnies/BunnyPlaceholder'
 import { InteractiveBunny } from './InteractiveBunny'
 
 interface Props {

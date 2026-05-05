@@ -1,9 +1,5 @@
 import type { Task, BunnyState } from '../types'
-import { BunnyTrapped } from '../assets/bunnies/BunnyTrapped'
-import { BunnyBreaking } from '../assets/bunnies/BunnyBreaking'
-import { BunnyDancing } from '../assets/bunnies/BunnyDancing'
-import { BunnyRoaming } from '../assets/bunnies/BunnyRoaming'
-import { BunnyInteractive } from '../assets/bunnies/BunnyInteractive'
+import { BunnyTrapped, BunnyBreaking, BunnyDancing, BunnyRoaming, BunnyInteractive } from '../assets/bunnies/BunnyPlaceholder'
 import type { ComponentType } from 'react'
 
 interface BunnySVGProps { className?: string }
