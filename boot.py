@@ -23,12 +23,12 @@ from adafruit_st7789 import ST7789
 # Pin map
 # ---------------------------------------------------------------------------
 # ST7789 SPI display
-LCD_MOSI = board.IO45
-LCD_CLK  = board.IO40
-LCD_CS   = board.IO42
-LCD_DC   = board.IO41
-LCD_RST  = board.IO39
-LCD_BL   = board.IO48
+LCD_MOSI = board.IO13
+LCD_CLK  = board.IO14
+LCD_CS   = board.IO15
+LCD_DC   = board.IO2
+LCD_BL   = board.IO21
+# LCD_RST is not wired on this board — the panel relies on software reset (0x01).
 
 # AXS5106L capacitive touch (I2C @ 0x15)
 TP_SDA = board.IO42
@@ -54,7 +54,7 @@ bus = fourwire.FourWire(
     spi,
     command=LCD_DC,
     chip_select=LCD_CS,
-    reset=LCD_RST,
+    reset=None,          # no hardware RST on this board; ST7789 init issues SWRESET
     baudrate=40_000_000,
 )
 
